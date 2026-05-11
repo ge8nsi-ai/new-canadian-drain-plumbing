@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Canadian Drain and Plumbing Ltd | Toronto Plumber</title>
+<style>
+  :root {
+    --ink: #0f172a;
+    --surface: #ffffff;
+    --muted: #64748b;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --danger: #dc2626;
+    --bg-soft: #f8fafc;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(15,23,42,0.08), 0 4px 12px rgba(15,23,42,0.05);
+    --shadow-lg: 0 10px 30px rgba(15,23,42,0.10);
+    --max-width: 1120px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--surface);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-icon {
+    width: 40px; height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .brand-text h1 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+  }
+  .brand-text span {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    text-decoration: none;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    background: var(--bg-soft);
+    text-decoration: none;
+  }
+  .btn-danger {
+    background: var(--danger);
+    color: #fff;
+  }
+  .btn-danger:hover {
+    background: #b91c1c;
+    text-decoration: none;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(180deg, #f0f9ff 0%, var(--surface) 100%);
+    padding: 80px 24px 64px;
+  }
+  .hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    max-width: 480px;
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+  }
+  .stars { color: #f59e0b; letter-spacing: 1px; }
+  .hero-card {
+    background: #fff;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 24px;
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .hero-card-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--muted);
+  }
+  .hero-card-row strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .hero-card-row svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--accent);
+  }
+  .hero-card .btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  /* Sections */
+  section {
+    padding: 64px 24px;
+  }
+  .section-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .section-title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .service-item {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .service-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    background: #fff;
+  }
+  .service-dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Reviews */
+  .reviews-bg { background: var(--bg-soft); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .review-card {
+    background: #fff;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  .review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .reviewer {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .review-date {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .review-stars {
+    color: #f59e0b;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .review-text {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .review-summary {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .review-big {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .review-big span {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+    display: block;
+    margin-top: 4px;
+  }
+  .review-bars {
+    flex: 1;
+    min-width: 200px;
+    max-width: 320px;
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: var(--muted);
+  }
+  .bar-track {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: #f59e0b;
+    border-radius: 3px;
+  }
+
+  /* Contact / CTA */
+  .cta {
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    padding: 80px 24px;
+  }
+  .cta h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.4px;
+  }
+  .cta p {
+    color: #94a3b8;
+    font-size: 16px;
+    margin-bottom: 28px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .cta .btn-primary {
+    background: #fff;
+    color: var(--ink);
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+  .cta .btn-primary:hover {
+    background: #f1f5f9;
+  }
+  .cta .btn-ghost {
+    color: #fff;
+    border-color: #334155;
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+  .cta .btn-ghost:hover {
+    background: #1e293b;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    background: var(--bg-soft);
+  }
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-col h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--muted);
+  }
+  .footer-col p, .footer-col a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 2;
+    display: block;
+  }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom {
+    max-width: var(--max-width);
+    margin: 32px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero { padding: 48px 24px 40px; }
+    .hero h2 { font-size: 28px; }
+    .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+    .header-actions .btn-ghost { display: none; }
+    section { padding: 48px 24px; }
+    .review-summary { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-icon">NC</div>
+      <div class="brand-text">
+        <h1>New Canadian Drain and Plumbing</h1>
+        <span>Toronto, ON</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a class="btn btn-ghost" href="tel:+14166512990">Call</a>
+      <a class="btn btn-primary" href="tel:+14166512990">24/7 Emergency</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h2>Fast, reliable plumbing across Toronto</h2>
+      <p>From emergency leaks to full installations, our licensed plumbers handle residential and commercial jobs with upfront pricing and no hidden fees.</p>
+      <div class="hero-meta">
+        <div class="rating"><span class="stars">★★★★★</span> 4.7 &middot; 1,613 reviews</div>
+        <span style="color:var(--muted);font-size:14px;">Open now &mdash; closes 10 PM</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="tel:+14166512990" class="btn btn-primary">Call (416) 651-2990</a>
+        <a href="#services" class="btn btn-ghost">View services</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Service details</h3>
+      <div class="hero-card-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><strong>Address</strong><br>184 St Helens Ave, Toronto, ON M6H 4A1</div>
+      </div>
+      <div class="hero-card-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><strong>Phone</strong><br><a href="tel:+14166512990">+1 (416) 651-2990</a></div>
+      </div>
+      <div class="hero-card-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div><strong>Hours</strong><br>Open now &mdash; closes 10 PM</div>
+      </div>
+      <a href="https://newcanadiandrain.com" target="_blank" rel="noopener" class="btn btn-primary">Book online</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-inner">
+    <h3 class="section-title">Services</h3>
+    <p class="section-sub">Residential and commercial plumbing, drains, and emergency repairs.</p>
+    <div class="services-grid">
+      <div class="service-item"><span class="service-dot"></span> Emergency plumbing</div>
+      <div class="service-item"><span class="service-dot"></span> Drain cleaning</div>
+      <div class="service-item"><span class="service-dot"></span> Drain repair & replacement</div>
+      <div class="service-item"><span class="service-dot"></span> Drain snaking</div>
+      <div class="service-item"><span class="service-dot"></span> Faucet installation & repair</div>
+      <div class="service-item"><span class="service-dot"></span> Shower installation & repair</div>
+      <div class="service-item"><span class="service-dot"></span> Toilet installation & repair</div>
+      <div class="service-item"><span class="service-dot"></span> Water heater installation & repair</div>
+      <div class="service-item"><span class="service-dot"></span> Sump pump installation & repair</div>
+      <div class="service-item"><span class="service-dot"></span> Backwater valve installation</div>
+      <div class="service-item"><span class="service-dot"></span> Sewer repair & cleaning</div>
+      <div class="service-item"><span class="service-dot"></span> Plumbing leak detection & repair</div>
+      <div class="service-item"><span class="service-dot"></span> Video camera inspection</div>
+      <div class="service-item"><span class="service-dot"></span> Waterproofing & leaky basement</div>
+      <div class="service-item"><span class="service-dot"></span> Burst & broken pipe repair</div>
+      <div class="service-item"><span class="service-dot"></span> Water line installation & replacement</div>
+      <div class="service-item"><span class="service-dot"></span> Main water valve service</div>
+      <div class="service-item"><span class="service-dot"></span> Commercial plumbing</div>
+      <div class="service-item"><span class="service-dot"></span> New construction plumbing</div>
+      <div class="service-item"><span class="service-dot"></span> 24/7 emergency call outs</div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-bg">
+  <div class="section-inner">
+    <h3 class="section-title">Customer reviews</h3>
+    <p class="section-sub">Trusted by Toronto homeowners and businesses.</p>
+
+    <div class="review-summary">
+      <div class="review-big">4.7<span>out of 5 &middot; 1,613 reviews</span></div>
+      <div class="review-bars">
+        <div class="bar"><span>5</span><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div></div>
+        <div class="bar"><span>4</span><div class="bar-track"><div class="bar-fill" style="width:14%"></div></div></div>
+        <div class="bar"><span>3</span><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></div>
+        <div class="bar"><span>2</span><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div></div>
+        <div class="bar"><span>1</span><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-header"><span class="reviewer">Homeowner</span><span class="review-date">Google review</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Super friendly people, and great service."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><span class="reviewer">Homeowner</span><span class="review-date">Google review</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Nima did an excellent job of fixing our clogged washing machine drain."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header"><span class="reviewer">Homeowner</span><span class="review-date">Google review</span></div>
+        <div class="review-stars">★★★☆☆</div>
+        <p class="review-text">"Owner refused to return any portion of the payment."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Need a plumber now?</h2>
+  <p>We answer calls 24/7. Emergency dispatch across Toronto with upfront quotes and no overtime surprises.</p>
+  <div class="cta-actions">
+    <a href="tel:+14166512990" class="btn btn-primary">Call (416) 651-2990</a>
+    <a href="https://newcanadiandrain.com" target="_blank" rel="noopener" class="btn btn-ghost">Book online</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>New Canadian Drain and Plumbing Ltd</h4>
+      <p>184 St Helens Ave<br>Toronto, ON M6H 4A1<br>Canada</p>
+      <p style="margin-top:8px;"><a href="tel:+14166512990">+1 (416) 651-2990</a></p>
+      <p><a href="https://newcanadiandrain.com" target="_blank" rel="noopener">newcanadiandrain.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick links</h4>
+      <a href="#services">Services</a>
+      <a href="tel:+14166512990">Emergency call</a>
+      <a href="https://newcanadiandrain.com" target="_blank" rel="noopener">Book online</a>
+    </div>
+    <div class="footer-col">
+      <h4>Service area</h4>
+      <p>Toronto and surrounding GTA. Residential and commercial. 24/7 availability.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; New Canadian Drain and Plumbing Ltd. All rights reserved. This is an informational page based on publicly listed business details.
+  </div>
+</footer>
+
+</body>
+</html>
